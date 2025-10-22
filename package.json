@@ -1,0 +1,116 @@
+{
+  "name": "ai-notes-app",
+  "version": "1.0.0",
+  "description": "AI-powered note-taking application with voice recording and smart features",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "build": "vite build",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux",
+    "build:all": "npm run build && electron-builder --mac --linux",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "notes",
+    "ai",
+    "electron",
+    "voice-recording",
+    "productivity",
+    "note-taking",
+    "gemini-ai"
+  ],
+  "author": {
+    "name": "AI Notes Contributors",
+    "email": "ainotes@example.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/ai-notes-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ai-notes-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ai-notes-app/issues"
+  },
+  "dependencies": {
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^38.4.0",
+    "electron-builder": "^24.9.1",
+    "png-to-ico": "^3.0.1",
+    "postcss": "^8.4.32",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^3.3.6",
+    "vite": "^7.1.11",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.ainotes.app",
+    "productName": "AI Notes",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Office",
+      "icon": "build/icon.png",
+      "desktop": {
+        "Name": "AI Notes",
+        "Comment": "AI-powered note-taking application",
+        "Categories": "Office;Utility;TextEditor;",
+        "Keywords": "notes;ai;productivity;voice;recording;",
+        "StartupWMClass": "AI Notes"
+      },
+      "executableName": "ai-notes",
+      "synopsis": "AI-powered note-taking with voice recording",
+      "description": "A powerful desktop application for taking notes with AI assistance, voice recording, and smart organization features."
+    },
+    "deb": {
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
+      ]
+    }
+  }
+}
