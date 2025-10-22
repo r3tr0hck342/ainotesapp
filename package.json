@@ -23,8 +23,8 @@
     "gemini-ai"
   ],
   "author": {
-    "name": "AI Notes Contributors",
-    "email": "ainotes@example.com"
+    "name": "Erik Peterson",
+    "email": "erik@example.com"
   },
   "license": "MIT",
   "homepage": "https://github.com/yourusername/ai-notes-app#readme",
@@ -46,7 +46,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
-    "electron": "^38.4.0",
+    "electron": "^28.0.0",
     "electron-builder": "^24.9.1",
     "png-to-ico": "^3.0.1",
     "postcss": "^8.4.32",

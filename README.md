@@ -243,6 +243,10 @@ For issues or questions:
 2. Review the console logs for errors
 3. Ensure all dependencies are installed correctly
 
+## Author
+
+**Erik Peterson**
+
 ## Contributing
 
 Contributions are welcome! Please ensure:
