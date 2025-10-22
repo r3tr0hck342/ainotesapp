@@ -94,7 +94,7 @@
 ```json
 "author": {
   "name": "Your Name or Organization",
-  "email": "contact@example.com",
+  "email": "r3tr0hac@pm.me",
   "url": "https://yourwebsite.com"
 },
 "homepage": "https://github.com/username/ai-notes-app",

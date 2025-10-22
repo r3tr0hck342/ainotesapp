@@ -86,7 +86,7 @@ We may update this privacy policy. Changes will be reflected in the app's docume
 
 For privacy concerns or questions:
 - GitHub Issues: https://github.com/yourusername/ai-notes-app/issues
-- Email: ainotes@example.com
+- Email: r3tr0hac@pm.me
 
 ## Summary
 

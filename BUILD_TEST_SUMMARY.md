@@ -235,7 +235,7 @@ All asset files are:
 
 3. **Update placeholders**
    - Replace "yourusername" in GitHub URLs
-   - Replace "ainotes@example.com" with real email
+   - Replace "ainotes@example.com" with real email (r3tr0hac@pm.me)
    - Update author information
 
 4. **Run functional tests**

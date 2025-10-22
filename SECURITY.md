@@ -190,7 +190,7 @@ sha256sum AI-Notes-1.0.0.dmg
 If you discover a security vulnerability, please report it responsibly:
 
 1. **DO NOT** open a public GitHub issue
-2. **Email:** security@example.com (or create a private security advisory on GitHub)
+2. **Email:** r3tr0hac@pm.me (or create a private security advisory on GitHub)
 3. **Include:**
    - Description of the vulnerability
    - Steps to reproduce
@@ -268,7 +268,7 @@ If you're contributing to AI Notes:
 
 ## Contact
 
-- **Security Issues:** security@example.com
+- **Security Issues:** r3tr0hac@pm.me
 - **General Issues:** https://github.com/yourusername/ai-notes-app/issues
 - **Discussions:** https://github.com/yourusername/ai-notes-app/discussions
 

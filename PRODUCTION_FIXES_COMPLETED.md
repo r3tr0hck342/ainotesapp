@@ -78,7 +78,7 @@ All critical and high-priority fixes have been successfully implemented to make 
 {
   "author": {
     "name": "AI Notes Contributors",
-    "email": "ainotes@example.com"
+    "email": "r3tr0hac@pm.me"
   },
   "homepage": "https://github.com/yourusername/ai-notes-app#readme",
   "repository": {

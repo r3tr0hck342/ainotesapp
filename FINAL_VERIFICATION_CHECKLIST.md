@@ -306,8 +306,8 @@ npm run build:linux
 ### Placeholder Replacement
 - [ ] Replace "Your Name" in package.json
 - [ ] Replace "yourusername" in URLs
-- [ ] Replace "ainotes@example.com" with real email
-- [ ] Replace "security@example.com" with real email
+- [ ] Replace "ainotes@example.com" with real email (r3tr0hac@pm.me)
+- [ ] Replace "security@example.com" with real email (r3tr0hac@pm.me)
 - [ ] Update GitHub repository URLs
 
 ### Final Checks

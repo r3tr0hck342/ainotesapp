@@ -364,7 +364,7 @@ try {
 name = "ai-notes"
 version = "1.0.0"
 description = "AI-powered note-taking application"
-authors = ["Erik Peterson"]
+authors = ["Erik Peterson <r3tr0hac@pm.me>"]
 license = "MIT"
 repository = ""
 edition = "2021"

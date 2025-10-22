@@ -139,7 +139,7 @@ electron-icon-builder --input=./build/icon.png --output=./build --flatten
   "main": "electron/main.js",
   "author": {
     "name": "Your Actual Name or Organization",
-    "email": "your.email@example.com"
+    "email": "r3tr0hac@pm.me"
   },
   "license": "MIT",
   "homepage": "https://github.com/yourusername/ai-notes-app#readme",
@@ -165,7 +165,7 @@ electron-icon-builder --input=./build/icon.png --output=./build --flatten
 
 **Replace:**
 - `Your Actual Name or Organization` → Your real name
-- `your.email@example.com` → Your contact email
+- `r3tr0hac@pm.me` → Your contact email
 - `yourusername` → Your GitHub username (if applicable)
 
 **If not using GitHub:**
@@ -515,7 +515,7 @@ xattr -cr /Applications/AI\ Notes.app
 
 If you discover a security vulnerability:
 1. **Do not** open a public issue
-2. Email: [your-security-email@example.com]
+2. Email: [r3tr0hac@pm.me]
 3. Include details and steps to reproduce
 4. We'll respond within 48 hours
 

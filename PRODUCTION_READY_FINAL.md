@@ -115,7 +115,7 @@ Your AI Notes Electron app is now **fully production-ready** for free distributi
 - [ ] Run `npm run build:linux` or `npm run build:mac`
 - [ ] Test built application on target platform
 - [ ] Update placeholder URLs (replace "yourusername")
-- [ ] Update placeholder email (replace "ainotes@example.com")
+- [ ] Update placeholder email (replace "ainotes@example.com" with r3tr0hac@pm.me)
 - [ ] Update author name in package.json
 - [ ] Create GitHub release (v1.0.0)
 - [ ] Upload build artifacts
