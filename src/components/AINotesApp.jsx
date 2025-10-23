@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { invoke } from "@tauri-apps/api/core";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -40,14 +41,17 @@ export default function AINotesApp() {
   // Load API key from environment
   useEffect(() => {
     const loadApiKey = async () => {
-      // Try to get from Electron environment first
-      if (window.electronAPI) {
-        const key = await window.electronAPI.getEnv('VITE_GEMINI_API_KEY');
+      try {
+        // Try to get from Tauri backend first
+        const key = await invoke('get_env', { key: 'VITE_GEMINI_API_KEY' });
         if (key) {
           setApiKey(key);
           return;
         }
+      } catch (error) {
+        console.log('Could not load API key from backend:', error);
       }
+      
       // Fallback to Vite environment variable
       const key = import.meta.env.VITE_GEMINI_API_KEY;
       if (key) {
@@ -59,47 +63,43 @@ export default function AINotesApp() {
     loadApiKey();
   }, []);
 
-  // Load notes from Electron file storage or localStorage fallback
+  // Load notes from Tauri backend
   useEffect(() => {
     const loadNotes = async () => {
       try {
-        if (window.electronAPI) {
-          const loadedNotes = await window.electronAPI.loadNotes();
-          setNotes(loadedNotes);
-          if (loadedNotes.length > 0) {
-            setSelectedNote(loadedNotes[0]);
-          }
-        } else {
-          // Fallback for non-Electron (e.g., browser)
-          const savedNotes = localStorage.getItem("ai-notes");
-          if (savedNotes) {
-            const parsed = JSON.parse(savedNotes);
-            setNotes(parsed);
-            if (parsed.length > 0) {
-              setSelectedNote(parsed[0]);
-            }
-          }
+        const loadedNotes = await invoke('load_notes');
+        setNotes(loadedNotes);
+        if (loadedNotes.length > 0) {
+          setSelectedNote(loadedNotes[0]);
         }
       } catch (error) {
         console.error("Failed to load notes:", error);
+        // Fallback to localStorage for development
+        const savedNotes = localStorage.getItem("ai-notes");
+        if (savedNotes) {
+          const parsed = JSON.parse(savedNotes);
+          setNotes(parsed);
+          if (parsed.length > 0) {
+            setSelectedNote(parsed[0]);
+          }
+        }
       }
     };
     loadNotes();
   }, []);
 
-  // Auto-save to Electron file storage or localStorage fallback
+  // Auto-save to Tauri backend
   useEffect(() => {
     const saveNotes = async () => {
       if (notes.length > 0) {
         try {
-          if (window.electronAPI) {
-            await window.electronAPI.saveNotes(notes);
-          } else {
-            localStorage.setItem("ai-notes", JSON.stringify(notes));
-          }
+          await invoke('save_notes', { notes });
           setLastSaved(new Date().toLocaleTimeString());
         } catch (error) {
           console.error("Failed to save notes:", error);
+          // Fallback to localStorage for development
+          localStorage.setItem("ai-notes", JSON.stringify(notes));
+          setLastSaved(new Date().toLocaleTimeString());
         }
       }
     };
